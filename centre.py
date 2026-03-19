@@ -32,13 +32,13 @@ while True:
           cy = int((M['m01']/M['m00']))
           centrex = int(640-cx)
           centrey = int(480-cy)
-          cv.drawContours(frame, [i], -1, (255, 0, 0), 2)
-          cv.circle(frame, (cx, cy), 7, (0, 0, 255), -1)
-          cv.putText(frame, "center", (cx -20, cy - 20), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
+          cv.drawContours(thresh, [i], -1, (255, 0, 0), 2)
+          cv.circle(thresh, (cx, cy), 7, (0, 0, 255), -1)
+          cv.putText(thresh, "centre", (cx -20, cy - 20), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
          
           print(f"Distance from centre x: {centrex} y: {centrey}")
 
-  cv.imshow('video', frame)
+  cv.imshow('video', thresh)
 
   exitkey = cv.waitKey(1)
   if exitkey == ord("q"):
