@@ -21,7 +21,7 @@ while True:
   check, frame = image.read()
   gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
   blur = cv.GaussianBlur(gray, (5, 5), cv.BORDER_DEFAULT)
-  ret, thresh = cv.threshold(blur, 200, 255, cv.THRESH_BINARY_INV)
+  ret, thresh = cv.threshold(blur, 200, 255, cv.THRESH_BINARY)
 
   contours, heirarchies = cv.findContours(thresh, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
   blank = np.zeros(thresh.shape[:2], dtype='uint8')
