@@ -24,7 +24,6 @@ while True:
   ret, thresh = cv.threshold(blur, 200, 255, cv.THRESH_BINARY)
 
   contours, heirarchies = cv.findContours(thresh, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
-  blank = np.zeros(thresh.shape[:2], dtype='uint8')
   for i in contours:
       M = cv.moments(i)
       if M['m00'] != 0:
